@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.5.0)
+project(MPQArchiver VERSION 0.1.0 LANGUAGES C CXX)
+add_compile_options(-pedantic)
+include_directories( StormLib-9.30 )
+link_directories(StormLib-9.30)
+add_subdirectory(StormLib-9.30)
+# add_library(storm)
+add_executable(MPQArchiver archiver.cpp)
+target_link_libraries( ${PROJECT_NAME} storm )
+
